@@ -1,0 +1,93 @@
+#ctrl+shift+N = Abre o R script
+#Ctrl+Enter = Executa o script
+#Ctrl+ - = Adiciona o simbolo de objeto
+
+1+5
+
+seq(1:10)
+
+rep(c("Ana", "Eduardo", "Vanessa"), each = 3)
+#usar interrogação antes do comando exibe os argumentos da função
+#?seq 
+##########################################
+
+#duas formas de criar vetor uma é direta e outra indireta
+#c(1,2,3) "c vem de combaine"
+#o vetor é uma sequencia de valores numer, letras...
+#salvar vetor em um objeto <- simbolo de assignemt...
+vetor_letras <- c("a","b","c")
+
+#criar vetores indiretamente
+1:10
+
+#repetição de vetores
+rep(1:10, time = 3)
+#length conta
+length(rep(1:10, time = 7))
+
+#########################################
+
+#Tipo de dados que o R trabalha
+#são quatro tipos de dados básico e um quinto que é os numeros complexos
+#double, character, integer e bol
+
+vector_letras <- c("a", "b", "c")
+typeof(vector_letras)
+
+vector_double <- c(10, 1.5, 2.5, 5.6)
+typeof(vector_double)
+
+#insere todos os dados de vector_double dentro de vector_double
+#e retorna o que for maior que 5
+vector_double[vector_double > 5]
+
+vector_logical <- c(TRUE, FALSE, F, T)
+
+vector_integer <- c(1L, 2L, 3L)
+
+#########
+
+#vetor cria tabelas de uma dimensão
+#Matriz são tabelas com duas dimensoes coluna e linha
+#a função dim abreviatura de dimensão
+
+vetor_integer <- 1:100
+dim(vetor_integer) <- c(25,4) #Matrix de 25 linhas por 4 colunas
+
+matrix(1:10, nrow = 5, ncol = 2)
+
+#Sistema d elocalização ou busca dentro de vetores
+vetor_letras[3]
+
+vetor_integer[2,3]
+vetor_integer[2,]
+vetor_integer
+
+#vetor atomico só é possivel manter um tipo de dado
+#o R converte automaticamente o tipo de dado (atentar para esta conversão)
+vetor_mistura <- c(TRUE, FALSE, 4.5, 6.7)
+vetor_mistura
+vetor_mistura_text <- c(4.5, 6.7, "a", "b")
+vetor_mistura_text
+
+#listas
+#não precisar estar dimensionados da mesma forma.
+#o R não converte automaticamento os valores
+list(1, c("Belo Horizonte", "Londrina", "Macapa"), FALSE, iris)
+#renomeando os dados de uma lista
+lista <- list(
+  indice = 1,
+  cidades = c("Belo Horizonte", "Londrina", "Macapá"),
+  logico = FALSE,
+  tabela = iris
+  )
+#para acessar os elementos de uma lista, digite $ (Cifrão) antes do nome do objeto
+#só é possível quando se nomeia os elementos da lista
+lista$cidades
+
+#quando os elementos da lista não são nomeados, pode ser usado o sistema
+#de colchetes para buscar os índices da lista
+#para buscar unicamente um elemento usa-se o colchete duplo
+#obs: testei com um colchete e funcionou a busca por um elemento especifico
+lista[[2]]
+
