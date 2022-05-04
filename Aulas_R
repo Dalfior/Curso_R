@@ -91,3 +91,34 @@ lista$cidades
 #obs: testei com um colchete e funcionou a busca por um elemento especifico
 lista[[2]]
 
+######################
+
+#Data frame: estruturas de dados
+#Assmelha-se a listas podendo conter dados de diferentes tipos. Possui uma caracteristica que torna necessário que cada coluna possua o mesmo númro de linhas Pode apresentar comportamento como um vetor
+#Colunas com dados diferentes
+
+tab <- data.frame(
+  nome = rep(c("Ana", "Eduardo", "Marcia"), 5),
+  valor = 1:12
+)
+
+tab
+
+#Quando não renomeamos as colunas o próprio R renomeaia automaticamente (É recomendado nomear as colunas)
+
+tab <- data.frame(
+  rep(c("Ana", "Eduardo", "Marcia"), 5),
+  1:15
+)
+
+#ao usar o $ é exibido o nome das colunas
+tab$X1.15
+
+#Usando colchetes para acessar um intervalo específico
+tab[c(3:6),]
+
+#puxando os valores somente da primeira coluna
+tab[,1]
+
+#usando dois colchetes puxa os valores de todaca coluna especificada
+tab[[2]]
